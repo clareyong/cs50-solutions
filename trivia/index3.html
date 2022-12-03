@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <title>Trivia! :D</title>
+    <script>
+        // helper functions:
+        function docReady(fn) {
+            // see if DOM is already available
+            if (document.readyState === "complete" || document.readyState === "interactive") {
+                // call on next available tick
+                setTimeout(fn, 1);
+            } else {
+                document.addEventListener("DOMContentLoaded", fn);
+            }
+        }
+
+
+        // TODO: Add code to check answers to questions
+        function question1(answer) {
+            const answerResult = document.getElementById("q1res");
+            if (answer == "Rhubarb") {
+                answerResult.innerHTML = "Correct!";
+            }
+            else if (answer == "Avocadoes") {
+                answerResult.innerHTML = "Wrong, please try again";
+            }
+
+            else if (answer == "Tomatoes") {
+                answerResult.innerHTML = "Wrong, please try again";
+            }
+        }
+        function question3() {
+            const answer = document.getElementById("q3input").value;
+            const answerResult = document.getElementById("q3res");
+            if (['kuala lumpur', 'kl', 'sabah'].includes(answer.toLowerCase())) {
+                answerResult.innerHTML = "Correct";
+            }
+            else {
+                answerResult.innerHTML = "Seriously...";
+            }
+        }
+
+        function q3RegisterInputListener() {
+            document.getElementById("q3input").addEventListener("keyup", (event) => {
+                if (event.keyCode === 13) {
+                    event.preventDefault();
+                    document.getElementById("q3submit").click();
+                }
+            });
+        }
+
+        docReady(q3RegisterInputListener);
+    </script>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Trivia!</h1>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <h2>Part 1: Multiple Choice </h2>
+            <hr>
+            <h3>1. Which of the following is NOT a fruit?</h3>
+            <div>
+                <button onclick="question1('Avocadoes')" class="kevin">Avocadoes</button>
+                <button onclick="question1('Rhubarb')">Rhubarb</button>
+                <button onclick="question1('Tomatoes')">Tomatoes</button>
+                <div id="q1res"></div>
+            </div>
+            <hr>
+            <h3>
+                2. The fear of insects is known as what?
+                <br />
+                <div>
+                    <button>Entomophobia</button>
+                    <button>Arachnophobia</button>
+                    <button>Ailurophobia</button>
+                </div>
+
+            </h3>
+
+            <!-- TODO: Add multiple choice question here -->
+        </div>
+
+        <div class="section">
+            <h2>Part 2: Free Response</h2>
+            <hr>
+            <h3>What is the capital of Malaysia?</h3>
+            <input type="text" id="q3input">
+            <button id="q3submit" onclick="question3()">Submit</button>
+            <div id="q3res"></div>
+            <!-- TODO: Add free response question here -->
+        </div>
+        <div class="section">
+            
+        </div>
+    </div>
+</body>
+<script>
+
+    document.addEventListener("DOMContentLoaded", q3InputListenEnter);
+</script>
+</html>

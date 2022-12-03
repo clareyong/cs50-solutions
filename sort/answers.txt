@@ -1,0 +1,31 @@
+sort1 uses: bubble sort
+
+How do you know?: It takes the longest time whether sorted or not.
+
+sort2 uses: merge sort
+
+How do you know?: It takes the same and lowest amount of time whether the data is sorted or not.
+
+sort3 uses: selection sort
+
+How do you know?: It takes a short time if it is already sorted, and a longer time if not.
+
+The shortest time for a sorted file is using bubble sort, second is merge, last is selection
+Sorted
+sort1: 0.076, 1.91
+sort2: 0.059, 2.343
+sort3: 0.051, 5.687
+
+Random
+sort1: 0.081, 8.325
+sort2: 0.051, 2.779
+sort3: 0.083, 6.505
+
+Reversed
+sort1: 0.077, 11.073
+sort2: 0.048, 2.049
+sort3: 0.051, 3.880
+
+Among all 3, sort2 takes the shortest time for all datasets whether sorted or not. It is likely to be merge sort
+sort3 takes the shortest time when it is all already sorted, it should be bubble sort
+sort1 is selection sort
